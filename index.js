@@ -9,11 +9,17 @@ app.use(
 		origin: "*",
 	})
 );
-const port = 5000;
+
+require("dotenv").config;
+
+const port = process.env.PORT || 5000;
 
 async function execPuppeteer() {
 	// Launch the browser and open a new blank page
-	const browser = await puppeteer.launch({ headless: false });
+	const browser = await puppeteer.launch({
+		headless: true,
+		args: ["--enable-gpu"],
+	});
 	const page = await browser.newPage();
 
 	// Navigate the page to a URL
