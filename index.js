@@ -17,8 +17,7 @@ const port = process.env.PORT || 5000;
 async function execPuppeteer() {
 	// Launch the browser and open a new blank page
 	const browser = await puppeteer.launch({
-		headless: true,
-		args: ["--enable-gpu"],
+		headless: false,
 	});
 	const page = await browser.newPage();
 
