@@ -27,7 +27,7 @@ async function execPuppeteer() {
 	// Set screen size
 	await page.setViewport({ width: 1080, height: 1024 });
 	setTimeout(() => {
-		console.log("2 secs completed");
+		console.log("2 secs completed!");
 		browser.close();
 	}, 2000);
 
